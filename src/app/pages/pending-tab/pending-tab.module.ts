@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { PendingTabPageRoutingModule } from './pending-tab-routing.module';
+import { ComponentsModule } from '../../components/components.module';
 
 import { PendingTabPage } from './pending-tab.page';
 
@@ -12,7 +13,8 @@ import { PendingTabPage } from './pending-tab.page';
         IonicModule,
         CommonModule,
         FormsModule,
-        PendingTabPageRoutingModule
+        PendingTabPageRoutingModule,
+        ComponentsModule        
     ],
     declarations: [PendingTabPage]
 })
