@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
     selector: 'pending-tab',
@@ -8,6 +9,6 @@ import { Component } from '@angular/core';
 
 export class PendingTabPage {
 
-  constructor() {}
+  constructor(private _tasksService: TasksService) {}
 
 }
