@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content color="dark" [fullscreen]="true">
-    <app-lists></app-lists>
+    <!-- Lista de las tareas pendientes -->
+    <app-lists [completedList]="false"></app-lists>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="tertiary" (click)="addList()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>
