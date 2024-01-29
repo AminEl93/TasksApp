@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border" [translucent]="true">
+    <ion-toolbar color="dark">
+        <!-- Botón de ir hacia atrás -->
+        <ion-buttons slot="start">
+            <ion-back-button color="tertiary" defaultHref="/"></ion-back-button>
+        </ion-buttons>
+
+        <!-- Título de la lista añadida -->
+        <ion-title>{{ list!.title }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+    <ion-list color="dark">
+        <!-- Input para añadir una nueva tarea -->
+        <ion-item color="dark">
+            <ion-label position="floating">Nueva tarea</ion-label>
+            <ion-input type="text" [(ngModel)]="itemName" (keyup.enter)="addItem()"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header color="dark" *ngIf="list!.items.length > 0">
+            <ion-label>Tareas</ion-label>
+        </ion-list-header>
+
+        <ion-item-sliding class="animated fadeInDown" *ngFor="let item of list!.items; let i = index">
+            <ion-item color="dark">
+                <!-- Checkbox con 2 estados: Pendiente o Completado -->
+                <ion-checkbox
+                    slot="start"
+                    color="tertiary"
+                    [(ngModel)]="item.completed"
+                    (ionChange)="changeCheck()"
+                >
+                </ion-checkbox>
+
+                <!-- Descripción de la tarea -->
+                <ion-label>{{ item.description }}</ion-label>
+            </ion-item>
+
+            <!-- Icono de borrar una tarea que aparece al deslizar -->
+            <ion-item-options side="end">
+                <ion-item-option (click)="deleteItem(i)" color="danger">
+                  <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>        
+    </ion-list>
+</ion-content>
