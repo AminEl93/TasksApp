@@ -1,7 +1,26 @@
-<ion-list color="dark">      
+ <ion-list color="dark">
+
+    <ion-item-sliding *ngFor="let list of _tasksService.lists | completedFilter:completedList">
+      
+        <ion-item detail color="dark" (click)="selectedList(list)">
+            <ion-label>{{ list.title }}</ion-label>        
+            <ion-note slot="end" color="tertiary">{{ list.items.length }} tareas</ion-note>
+        </ion-item>
+  
+        <!-- Editar una lista -->
+        <ion-item-options side="start">
+            <ion-item-option color="tertiary" (click)="editList(list)">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+  
+        <!-- Borrar una lista -->
+        <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="deleteList(list)">
+                <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
     
-    <ion-item detail color="dark">
-        <ion-label>Tarea 1</ion-label>
-    </ion-item>
+    </ion-item-sliding>  
   
 </ion-list>
