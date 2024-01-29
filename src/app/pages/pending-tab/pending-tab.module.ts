@@ -14,7 +14,7 @@ import { PendingTabPage } from './pending-tab.page';
         CommonModule,
         FormsModule,
         PendingTabPageRoutingModule,
-        ComponentsModule        
+        ComponentsModule  
     ],
     declarations: [PendingTabPage]
 })

@@ -6,27 +6,19 @@ const routes: Routes = [
     {
         path: 'tabs',
         component: TabsPage,
-        children: [
+        children: [            
             {
                 path: 'pending-tab',
                 loadChildren: () => import('../pending-tab/pending-tab.module').then(m => m.PendingTabPageModule)
-            },
+            },            
             {
                 path: 'completed-tab',
                 loadChildren: () => import('../completed-tab/completed-tab.module').then(m => m.CompletedTabPageModule)
             },
-            {
-                path: '',
-                redirectTo: '/tabs/pending-tab',
-                pathMatch: 'full'
-            }
+            { path: '', redirectTo: '/tabs/pending-tab', pathMatch: 'full' }
         ]
     },
-    {
-        path: '',
-        redirectTo: '/tabs/pending-tab',
-        pathMatch: 'full'
-    }
+    { path: '', redirectTo: '/tabs/pending-tab', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { PendingTabPage } from './pending-tab.page';
 
 const routes: Routes = [
+    { path: '', component: PendingTabPage },
     {
-        path: '',
-        component: PendingTabPage,
+        path: 'add-list/:listId',
+        loadChildren: () => import('../add-list/add-list.module').then(m => m.AddListPageModule)
     }
 ];
 

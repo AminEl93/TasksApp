@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
+import { PipesModule } from '../pipes/pipes.module';
+
 import { ListsComponent } from './lists/lists.component';
 
 @NgModule({
@@ -9,7 +11,8 @@ import { ListsComponent } from './lists/lists.component';
     exports: [ListsComponent],
     imports: [
         CommonModule,
-        IonicModule  
+        IonicModule,
+        PipesModule
     ]
 })
 

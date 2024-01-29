@@ -5,13 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { CompletedTabPage } from './completed-tab.page';
 
 import { CompletedTabPageRoutingModule } from './completed-tab-routing.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
     imports: [
         IonicModule,
         CommonModule,
         FormsModule,
-        CompletedTabPageRoutingModule
+        CompletedTabPageRoutingModule,
+        ComponentsModule
     ],
     declarations: [CompletedTabPage]
 })
